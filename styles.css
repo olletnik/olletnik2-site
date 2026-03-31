@@ -857,67 +857,83 @@ nav.nav-scrolled .nav-menu-btn span {
 /* === WHY NOW === */
 .why-now {
     padding: clamp(4.2rem, 7vw, 6rem) 48px;
-    background: linear-gradient(180deg, #eff7ff 0%, #f7fcff 55%, var(--bg-body) 100%);
-    border-top: 1px solid rgba(33, 133, 215, 0.09);
-    border-bottom: 1px solid rgba(33, 133, 215, 0.08);
+    background: var(--bg-body);
 }
 
 .why-now-header {
     max-width: 760px;
-    margin-bottom: 34px;
+    margin-bottom: 40px;
 }
 
 .why-now-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 0;
 }
 
 .why-now-card {
-    background: #fff;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    border-radius: 16px;
-    padding: 22px 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    background: var(--bg-white);
+    border: 1px solid rgba(15, 23, 42, 0.07);
+    padding: 40px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.why-now-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #4da6e8);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.why-now-card:hover .why-now-accent {
+    transform: scaleX(1);
 }
 
 .why-now-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(33, 133, 215, 0.26);
-    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    background: #f8fbff;
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
 }
 
-.why-now-label {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(33, 133, 215, 0.12);
-    color: var(--blue);
+.why-now-number {
+    display: block;
     font-family: var(--font-heading);
-    font-size: 11px;
+    font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.08em;
-    margin-bottom: 12px;
+    color: var(--blue);
+    opacity: 0.5;
+    margin-bottom: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.why-now-card:hover .why-now-number {
+    opacity: 1;
 }
 
 .why-now-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.06rem;
-    line-height: 1.35;
-    margin-bottom: 8px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--slate-900);
 }
 
 .why-now-card p {
     font-size: 0.92rem;
     color: var(--slate-600);
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .why-now-cta {
-    margin-top: 22px;
+    margin-top: 32px;
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
