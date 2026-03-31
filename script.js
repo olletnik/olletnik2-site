@@ -57,15 +57,36 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentFile = window.location.pathname.split('/').pop() || 'index.html';
             const currentHash = window.location.hash || '';
 
+            let hasExactMatch = false;
+
             menuLinks.forEach((link) => {
                 const href = link.getAttribute('href') || '';
-                const targetFile = href.split('#')[0] || 'index.html';
-                const targetHash = href.includes('#') ? `#${href.split('#')[1]}` : '';
+                const [rawFile, rawHash] = href.split('#');
+                const targetFile = rawFile || 'index.html';
+                const targetHash = rawHash ? `#${rawHash}` : '';
 
-                const sameFile = targetFile === currentFile;
-                const isHomeSection = currentFile === 'index.html' && targetFile === 'index.html' && targetHash && targetHash === currentHash;
+                const exactMatch = currentFile === 'index.html'
+                    ? targetFile === 'index.html' && targetHash && targetHash === currentHash
+                    : targetFile === currentFile && !targetHash;
 
-                link.classList.toggle('is-current', sameFile || isHomeSection);
+                if (exactMatch) {
+                    hasExactMatch = true;
+                }
+            });
+
+            menuLinks.forEach((link) => {
+                const href = link.getAttribute('href') || '';
+                const [rawFile, rawHash] = href.split('#');
+                const targetFile = rawFile || 'index.html';
+                const targetHash = rawHash ? `#${rawHash}` : '';
+
+                const exactMatch = currentFile === 'index.html'
+                    ? targetFile === 'index.html' && targetHash && targetHash === currentHash
+                    : targetFile === currentFile && !targetHash;
+
+                const fallbackHome = !hasExactMatch && currentFile === 'index.html' && targetFile === 'index.html' && targetHash === '#services';
+
+                link.classList.toggle('is-current', exactMatch || fallbackHome);
             });
         };
 
