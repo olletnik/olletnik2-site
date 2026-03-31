@@ -2629,7 +2629,7 @@ footer {
 .logo-marquee-section {
     padding: 36px 48px 44px;
     text-align: center;
-    background: transparent;
+    background: linear-gradient(180deg, #f7fbff 0%, #edf6ff 100%);
 }
 
 .logo-marquee-wrap {
