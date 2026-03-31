@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.getElementById('menuBtn');
     const fsMenu = document.getElementById('fullscreenMenu');
     if (menuBtn && fsMenu) {
+        const menuLinks = fsMenu.querySelectorAll('[data-menu-link]');
+
         const setMenuState = (isOpen) => {
             menuBtn.classList.toggle('active', isOpen);
             menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -51,11 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        const markActiveMenuLink = () => {
+            const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+            const currentHash = window.location.hash || '';
+
+            menuLinks.forEach((link) => {
+                const href = link.getAttribute('href') || '';
+                const targetFile = href.split('#')[0] || 'index.html';
+                const targetHash = href.includes('#') ? `#${href.split('#')[1]}` : '';
+
+                const sameFile = targetFile === currentFile;
+                const isHomeSection = currentFile === 'index.html' && targetFile === 'index.html' && targetHash && targetHash === currentHash;
+
+                link.classList.toggle('is-current', sameFile || isHomeSection);
+            });
+        };
+
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.addEventListener('click', () => {
             setMenuState(!fsMenu.classList.contains('open'));
         });
-        fsMenu.querySelectorAll('[data-menu-link]').forEach(link => {
+        menuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 setMenuState(false);
             });
@@ -66,6 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 setMenuState(false);
             }
         });
+
+        markActiveMenuLink();
+        window.addEventListener('hashchange', markActiveMenuLink);
+    }
+
+    /* === SUBPAGE STICKY CTA === */
+    const path = window.location.pathname;
+    const isHome = /\/(index\.html)?$/.test(path);
+    const isLegalPage = /impressum\.html$|datenschutz\.html$/i.test(path);
+
+    if (!isHome && !isLegalPage) {
+        const stickyCta = document.createElement('a');
+        stickyCta.href = 'https://outlook.office365.com/book/KintelloGmbH@kintello.de/';
+        stickyCta.target = '_blank';
+        stickyCta.rel = 'noopener';
+        stickyCta.className = 'sticky-consult-cta';
+        stickyCta.innerHTML = `
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+            </svg>
+            <span>Kostenlose Erstberatung</span>
+        `;
+        document.body.appendChild(stickyCta);
     }
 
     /* === GSAP SCROLL ANIMATIONS === */

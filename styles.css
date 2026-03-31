@@ -208,7 +208,7 @@ nav:not(.nav-scrolled) .nav-logo img {
 }
 
 nav.menu-open .nav-logo img {
-    filter: none;
+    filter: brightness(0) invert(1);
 }
 
 nav.nav-scrolled .nav-logo img {
@@ -352,11 +352,37 @@ nav.nav-scrolled .nav-menu-btn span {
     font-size: clamp(2rem, 5vw, 3.6rem);
     font-weight: 600;
     color: rgba(255, 255, 255, 0.5);
-    transition: color 0.3s ease;
+    transition: color 0.25s ease, transform 0.25s ease, letter-spacing 0.25s ease;
     line-height: 1.3;
+    position: relative;
+    display: inline-block;
 }
 
 .menu-links a:hover {
+    color: #fff;
+    transform: translateX(6px);
+    letter-spacing: 0.01em;
+}
+
+.menu-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, var(--blue), var(--teal), var(--green));
+    transition: transform 0.25s ease;
+}
+
+.menu-links a:hover::after,
+.menu-links a.is-current::after {
+    transform: scaleX(1);
+}
+
+.menu-links a.is-current {
     color: #fff;
 }
 
@@ -826,6 +852,75 @@ nav.nav-scrolled .nav-menu-btn span {
     padding: clamp(5rem, 8vw, 7rem) 48px;
     position: relative;
     background: var(--bg-body);
+}
+
+/* === WHY NOW === */
+.why-now {
+    padding: clamp(4.2rem, 7vw, 6rem) 48px;
+    background: linear-gradient(180deg, #eff7ff 0%, #f7fcff 55%, var(--bg-body) 100%);
+    border-top: 1px solid rgba(33, 133, 215, 0.09);
+    border-bottom: 1px solid rgba(33, 133, 215, 0.08);
+}
+
+.why-now-header {
+    max-width: 760px;
+    margin-bottom: 34px;
+}
+
+.why-now-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.why-now-card {
+    background: #fff;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    padding: 22px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.why-now-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(33, 133, 215, 0.26);
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.why-now-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(33, 133, 215, 0.12);
+    color: var(--blue);
+    font-family: var(--font-heading);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.why-now-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.06rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+.why-now-card p {
+    font-size: 0.92rem;
+    color: var(--slate-600);
+    line-height: 1.6;
+}
+
+.why-now-cta {
+    margin-top: 22px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .services-header {
@@ -3138,6 +3233,36 @@ footer {
     align-self: flex-start;
 }
 
+/* === STICKY CTA (SUBPAGES) === */
+.sticky-consult-cta {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1200;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.02em;
+    background: linear-gradient(120deg, #2185D7, #24BFB1);
+    box-shadow: 0 10px 26px rgba(33, 133, 215, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sticky-consult-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(33, 133, 215, 0.42);
+}
+
+.sticky-consult-cta svg {
+    width: 14px;
+    height: 14px;
+}
+
 /* === WARUM KINTELLO BENTO === */
 .bento-section {
     padding: clamp(5rem, 8vw, 7rem) 48px;
@@ -3790,6 +3915,10 @@ footer {
         grid-template-columns: 1fr 1fr;
     }
 
+    .why-now-grid {
+        grid-template-columns: 1fr;
+    }
+
     .team-inner {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -3850,6 +3979,7 @@ footer {
     }
 
     .services,
+    .why-now,
     .work,
     .security-check,
     .process,
@@ -3966,6 +4096,13 @@ footer {
 
     .legal-page {
         padding: 120px 24px 60px;
+    }
+
+    .sticky-consult-cta {
+        right: 12px;
+        left: 12px;
+        bottom: 12px;
+        justify-content: center;
     }
 }
 
