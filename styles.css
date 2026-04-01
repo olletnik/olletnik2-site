@@ -2648,6 +2648,28 @@ footer {
     background: var(--bg-body);
 }
 
+.logo-marquee-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 18px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+}
+
+.logo-marquee-label::before,
+.logo-marquee-label::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: rgba(33, 133, 215, 0.28);
+}
+
 .logo-marquee-wrap {
     position: relative;
     overflow: hidden;
