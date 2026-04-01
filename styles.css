@@ -2674,8 +2674,8 @@ footer {
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    mask-image: none;
-    -webkit-mask-image: none;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
 
 .logo-marquee-track {
