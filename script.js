@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <path d="M5 12h14" />
                 <path d="m12 5 7 7-7 7" />
             </svg>
-            <span>Kostenlose Erstberatung</span>
+            <span>Unverbindliches Erstgespräch</span>
         `;
         document.body.appendChild(stickyCta);
     }

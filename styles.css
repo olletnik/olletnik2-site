@@ -1,5 +1,5 @@
 /* ========================================================================
-   Kintello GmbH — Website v2 Hybrid
+    Kintello GmbH - Website v2 Hybrid
    Creative mix: Dark gradient hero + modern typography + glass effects
    ======================================================================== */
 
@@ -257,13 +257,14 @@ nav.nav-scrolled .nav-phone {
 .nav-booking-btn {
     display: inline-flex;
     align-items: center;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.02em;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
     color: rgba(248, 250, 252, 0.9);
     border: 1px solid rgba(203, 213, 225, 0.35);
     background: rgba(255, 255, 255, 0.08);
-    padding: 8px 18px;
+    padding: 10px 18px;
     border-radius: 10px;
     backdrop-filter: blur(8px);
     transition: all 0.3s ease;
@@ -696,9 +697,9 @@ nav.nav-scrolled .nav-menu-btn span {
     gap: 8px;
     padding: 16px 32px;
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.92);
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
@@ -768,9 +769,9 @@ nav.nav-scrolled .nav-menu-btn span {
 
 /* === SECTION HELPERS === */
 .section-eyebrow {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--blue);
     margin-bottom: 16px;
@@ -796,10 +797,10 @@ nav.nav-scrolled .nav-menu-btn span {
 }
 
 .section-desc {
-    font-size: 1.1rem;
-    color: var(--slate-600);
+    font-size: 1.125rem;
+    color: var(--slate-700);
     max-width: 540px;
-    line-height: 1.65;
+    line-height: 1.72;
     margin-top: 16px;
 }
 
@@ -1092,15 +1093,15 @@ nav.nav-scrolled .nav-menu-btn span {
 }
 
 .service-solution {
-    font-size: 14.5px;
-    line-height: 1.75;
-    opacity: 0.55;
+    font-size: 15.5px;
+    line-height: 1.72;
+    opacity: 0.72;
     transition: opacity 0.4s ease;
     color: inherit;
 }
 
 .service-card:hover .service-solution {
-    opacity: 0.85;
+    opacity: 0.92;
 }
 
 .service-tags {
@@ -1111,14 +1112,14 @@ nav.nav-scrolled .nav-menu-btn span {
 }
 
 .service-tag {
-    font-size: 10px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     padding: 5px 12px;
     border: 1px solid rgba(15, 23, 42, 0.1);
     border-radius: 20px;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .service-card:hover .service-tag {
@@ -1420,11 +1421,10 @@ nav.nav-scrolled .nav-menu-btn span {
 }
 
 .stat-label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--slate-500);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    letter-spacing: 0.03em;
 }
 
 /* === WORK / REFERENZEN === */
@@ -2147,12 +2147,12 @@ footer {
 }
 
 .subpage-stat .stat-label {
-    color: var(--slate-400);
+    color: rgba(226, 232, 240, 0.84);
 }
 
 /* === PILLAR THEMES === */
 
-/* IT-Services — Blue */
+/* IT-Services - Blue */
 .subpage-hero-it::before {
     background:
         radial-gradient(ellipse 60% 50% at 20% 20%, rgba(33, 133, 215, 0.22) 0%, transparent 60%),
@@ -2172,7 +2172,7 @@ footer {
     box-shadow: 0 0 24px rgba(33, 133, 215, 0.1);
 }
 
-/* KI-Innovation — Purple */
+/* KI-Innovation - Purple */
 .subpage-hero-ki {
     background: linear-gradient(130deg, #1d1238 0%, #3b1f75 42%, #24144a 100%);
 }
@@ -2196,7 +2196,7 @@ footer {
     box-shadow: 0 0 24px rgba(139, 92, 246, 0.1);
 }
 
-/* Akademie — Green */
+/* Akademie - Green */
 .subpage-hero-ak {
     background: linear-gradient(130deg, #0d2b20 0%, #1e5d42 42%, #123426 100%);
 }
@@ -2277,11 +2277,11 @@ footer {
 }
 
 .pain-points .section-eyebrow {
-    color: var(--slate-400);
+    color: rgba(226, 232, 240, 0.8);
 }
 
 .pain-points .section-eyebrow::before {
-    background: var(--slate-500);
+    background: rgba(226, 232, 240, 0.42);
 }
 
 .pillar-it.pain-points .section-eyebrow {
@@ -2384,16 +2384,17 @@ footer {
 
 .pain-card h3 {
     font-family: var(--font-heading);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    margin-bottom: 8px;
+    line-height: 1.35;
+    margin-bottom: 10px;
     color: #fff;
 }
 
 .pain-card p {
-    font-size: 0.88rem;
-    color: rgba(255, 255, 255, 0.55);
-    line-height: 1.55;
+    font-size: 0.98rem;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.65;
 }
 
 .service-areas {
