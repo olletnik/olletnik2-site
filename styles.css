@@ -3599,10 +3599,108 @@ footer {
     box-shadow: 0 24px 64px rgba(15, 23, 42, 0.1);
 }
 
-.team-photo img {
+.team-photo > img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* === TEAM VISUAL CARD (CSS-only brand placeholder) === */
+.team-photo--visual {
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--dark-900) 0%, #081b44 50%, var(--dark-700) 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 48px 40px;
+}
+
+.team-photo--visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 60% at 30% 30%, rgba(33, 133, 215, 0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 70%, rgba(36, 191, 177, 0.12) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.tvc-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--brand-gradient);
+    z-index: 2;
+}
+
+.tvc-logo {
+    width: 200px;
+    max-width: 70%;
+    height: auto;
+    opacity: 0.92;
+    position: relative;
+    z-index: 1;
+    display: block;
+}
+
+.tvc-tagline {
+    font-size: 0.85rem;
+    color: rgba(226, 232, 240, 0.5);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.tvc-stats {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 14px 24px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-top: 4px;
+}
+
+.tvc-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 0 18px;
+}
+
+.tvc-num {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.tvc-label {
+    font-size: 0.65rem;
+    color: var(--slate-400);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.tvc-divider {
+    width: 1px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.12);
+    flex-shrink: 0;
 }
 
 .team-text h2 {
