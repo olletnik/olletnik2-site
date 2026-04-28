@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+    <defs>
+        <linearGradient id="kintello-gradient" x1="8" y1="58" x2="54" y2="6" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#2c7be5" />
+            <stop offset="0.58" stop-color="#29d3c3" />
+            <stop offset="1" stop-color="#b8ea45" />
+        </linearGradient>
+    </defs>
+    <path fill="url(#kintello-gradient)" d="M12 6h10v17L12 32l10 9v17H12V44L4 32l8-12V6Z" />
+    <path fill="url(#kintello-gradient)" d="M34 6h16L34 32l16 26H34L18 32 34 6Z" />
+</svg>

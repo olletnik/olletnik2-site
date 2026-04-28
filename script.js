@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const words = [
             'Unternehmen resilient.',
             'IT ausfallsicher.',
-            'Team KI-ready.',
+            'Unternehmen KI-ready.',
             'Prozesse automatisiert.',
         ];
         let wordIdx = 0;
