@@ -1,11 +1,14 @@
 {
-    "$schema": "./node_modules/wrangler/config-schema.json",
-    "name": "kintello-de",
-    "compatibility_date": "2026-04-28",
-    "workers_dev": true,
-    "assets": {
-        "directory": ".cloudflare-pages",
-        "html_handling": "auto-trailing-slash",
-        "not_found_handling": "404-page"
-    }
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "kintello-de",
+  "compatibility_date": "2026-04-28",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "."
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
 }
