@@ -2683,8 +2683,28 @@ footer {
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    isolation: isolate;
+}
+
+.logo-marquee-wrap::before,
+.logo-marquee-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 72px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.logo-marquee-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg-body) 0%, rgba(250, 250, 250, 0) 100%);
+}
+
+.logo-marquee-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg-body) 0%, rgba(250, 250, 250, 0) 100%);
 }
 
 .logo-marquee-track {
@@ -2692,10 +2712,15 @@ footer {
     gap: 24px;
     width: max-content;
     animation: logoMarquee 34s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
-.logo-marquee-wrap:hover .logo-marquee-track {
-    animation-play-state: paused;
+@media (hover: hover) {
+    .logo-marquee-wrap:hover .logo-marquee-track {
+        animation-play-state: paused;
+    }
 }
 
 .logo-pill {
@@ -4099,6 +4124,24 @@ footer {
 
     .logos-grid img {
         height: 28px;
+    }
+
+    .logo-marquee-wrap::before,
+    .logo-marquee-wrap::after {
+        width: 36px;
+    }
+
+    .logo-marquee-track {
+        gap: 18px;
+        animation-duration: 20s;
+    }
+
+    .logo-pill {
+        padding: 10px 18px;
+    }
+
+    .logo-pill img {
+        height: 34px;
     }
 
     .cta-contact {
