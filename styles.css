@@ -1979,10 +1979,18 @@ footer {
     padding-bottom: 48px;
 }
 
-.footer-brand .footer-logo img {
-    height: 32px;
-    width: auto;
+.footer-brand .footer-logo {
+    display: inline-block;
+    width: 132px;
+    height: 24px;
+    overflow: hidden;
     margin-bottom: 16px;
+}
+
+.footer-brand .footer-logo img {
+    display: block;
+    width: 132px;
+    height: auto;
 }
 
 .footer-tagline {

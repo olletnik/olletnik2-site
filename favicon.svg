@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-    <defs>
-        <linearGradient id="kintello-gradient" x1="8" y1="58" x2="54" y2="6" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#2c7be5" />
-            <stop offset="0.58" stop-color="#29d3c3" />
-            <stop offset="1" stop-color="#b8ea45" />
-        </linearGradient>
-    </defs>
-    <path fill="url(#kintello-gradient)" d="M12 6h10v17L12 32l10 9v17H12V44L4 32l8-12V6Z" />
-    <path fill="url(#kintello-gradient)" d="M34 6h16L34 32l16 26H34L18 32 34 6Z" />
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="465" height="392" viewBox="0 0 465 392" fill="none"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><path fill-rule="evenodd" clip-rule="evenodd" d="M68.918 294.155L0 195.73L68.918 97.305V0H206.142V97.742L137.53 195.73L206.142 293.718V391.46H68.918V294.155ZM315.331 391.46L178.28 195.73L315.331 0H464.021L326.969 195.73L464.021 391.46H315.331Z" fill="url(#paint0_linear_1212_6189)"></path><defs>
+<linearGradient id="paint0_linear_1212_6189" x1="347.887" y1="0.000503146" x2="96.051" y2="338.737" gradientUnits="userSpaceOnUse">
+<stop stop-color="#B7E052"></stop>
+<stop offset="0.41" stop-color="#27DE9C"></stop>
+<stop offset="0.73" stop-color="#1C79E0"></stop>
+<stop offset="1" stop-color="#38A0BD"></stop>
+</linearGradient>
+</defs></svg>
