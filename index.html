@@ -48,15 +48,9 @@
             "description": "IT-Services, KI-Automatisierung und Weiterbildung für mittelständische Unternehmen."
         }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="vendor/gsap/gsap.min.js" defer></script>
+    <script src="vendor/gsap/ScrollTrigger.min.js" defer></script>
 </head>
 
 <body>
@@ -150,23 +144,37 @@
         <p class="logo-marquee-label"><span>Vertrauen von Unternehmen wie</span></p>
         <div class="logo-marquee-wrap">
             <div class="logo-marquee-track">
-                <div class="logo-pill"><img src="Referenzen/FCA.png" alt="FCA"></div>
-                <div class="logo-pill"><img src="Referenzen/fullwood.png" alt="Fullwood"></div>
-                <div class="logo-pill"><img src="Referenzen/Diakonie.png" alt="Diakonie"></div>
-                <div class="logo-pill"><img src="Referenzen/DieTalente.png" alt="Die Talente"></div>
-                <div class="logo-pill"><img src="Referenzen/wertapharm.png" alt="Wertapharm"></div>
-                <div class="logo-pill"><img src="Referenzen/schoenegger-logo_mobile.png" alt="Schönegger"></div>
-                <div class="logo-pill"><img src="Referenzen/logo-drucktreff.png" alt="drucktreff"></div>
-                <div class="logo-pill"><img src="Referenzen/MO_Anwaelte_MOO-1.png" alt="MO Anwälte"></div>
+                <div class="logo-pill"><img src="Referenzen/FCA.avif" alt="FCA" loading="lazy" decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/fullwood.avif" alt="Fullwood" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/Diakonie.avif" alt="Diakonie" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/DieTalente.png" alt="Die Talente" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/wertapharm.avif" alt="Wertapharm" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/schoenegger-logo_mobile.png" alt="Schönegger" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/logo-drucktreff.png" alt="drucktreff" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/MO_Anwaelte_MOO-1.png" alt="MO Anwälte" loading="lazy"
+                        decoding="async"></div>
                 <!-- Duplicate for seamless loop -->
-                <div class="logo-pill"><img src="Referenzen/FCA.png" alt="FCA"></div>
-                <div class="logo-pill"><img src="Referenzen/fullwood.png" alt="Fullwood"></div>
-                <div class="logo-pill"><img src="Referenzen/Diakonie.png" alt="Diakonie"></div>
-                <div class="logo-pill"><img src="Referenzen/DieTalente.png" alt="Die Talente"></div>
-                <div class="logo-pill"><img src="Referenzen/wertapharm.png" alt="Wertapharm"></div>
-                <div class="logo-pill"><img src="Referenzen/schoenegger-logo_mobile.png" alt="Schönegger"></div>
-                <div class="logo-pill"><img src="Referenzen/logo-drucktreff.png" alt="drucktreff"></div>
-                <div class="logo-pill"><img src="Referenzen/MO_Anwaelte_MOO-1.png" alt="MO Anwälte"></div>
+                <div class="logo-pill"><img src="Referenzen/FCA.avif" alt="FCA" loading="lazy" decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/fullwood.avif" alt="Fullwood" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/Diakonie.avif" alt="Diakonie" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/DieTalente.png" alt="Die Talente" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/wertapharm.avif" alt="Wertapharm" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/schoenegger-logo_mobile.png" alt="Schönegger" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/logo-drucktreff.png" alt="drucktreff" loading="lazy"
+                        decoding="async"></div>
+                <div class="logo-pill"><img src="Referenzen/MO_Anwaelte_MOO-1.png" alt="MO Anwälte" loading="lazy"
+                        decoding="async"></div>
             </div>
         </div>
     </section>
@@ -433,7 +441,7 @@
 
     <!-- Testimonial -->
     <section class="testimonial scroll-animate">
-        <p class="section-eyebrow" style="justify-content:center;">Praxisbeispiel</p>
+        <p class="section-eyebrow section-eyebrow--center">Praxisbeispiel</p>
         <blockquote class="testimonial-quote">
             Der Fortschritt kam nicht durch mehr Tools, sondern durch einen klaren Gesamtansatz: nur Lösungen mit
             echtem Mehrwert, sauber eingeführt und von den Mitarbeitenden mitgetragen. So wurde der Alltag einfacher
