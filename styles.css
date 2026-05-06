@@ -256,7 +256,13 @@ body {
 
     .cookie-settings-btn {
         left: 12px;
-        bottom: 74px;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+        padding: 7px 11px;
+        font-size: 0.7rem;
+    }
+
+    .has-sticky-consult-cta .cookie-settings-btn {
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
     }
 }
 
@@ -2891,7 +2897,7 @@ footer {
     width: max-content;
     animation: logoMarquee 34s linear infinite;
     will-change: transform;
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
     backface-visibility: hidden;
 }
 
@@ -2930,6 +2936,10 @@ footer {
 }
 
 @keyframes logoMarquee {
+    from {
+        transform: translateX(0);
+    }
+
     to {
         transform: translateX(-50%);
     }
@@ -3050,33 +3060,6 @@ footer {
 .process-step-dark[data-step="3"] .process-step-number,
 .process-step-dark[data-step="4"] .process-step-number {
     color: var(--green);
-}
-
-.live-badge {
-    display: inline-block;
-    padding: 3px 10px;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #fff;
-    background: var(--green);
-    border-radius: 999px;
-    margin-left: 8px;
-    vertical-align: middle;
-    animation: livePulse 2s ease-in-out infinite;
-}
-
-@keyframes livePulse {
-
-    0%,
-    100% {
-        box-shadow: 0 0 0 0 rgba(51, 220, 151, 0.4);
-    }
-
-    50% {
-        box-shadow: 0 0 0 8px rgba(51, 220, 151, 0);
-    }
 }
 
 .process-step-dark h3 {
@@ -4353,7 +4336,10 @@ footer {
 
     .logo-marquee-track {
         gap: 14px;
-        animation-duration: 28s;
+        animation: logoMarquee 28s linear infinite !important;
+        animation-play-state: running !important;
+        transform: translate3d(0, 0, 0);
+        will-change: transform;
     }
 
     .logo-pill {
@@ -4430,5 +4416,10 @@ footer {
         opacity: 1;
         transform: none;
         filter: none;
+    }
+
+    .logo-marquee-track {
+        animation: logoMarquee 34s linear infinite !important;
+        animation-play-state: running !important;
     }
 }
