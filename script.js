@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isHome && !isLegalPage) {
         const stickyCta = document.createElement('a');
-        stickyCta.href = 'https://outlook.office365.com/book/KintelloGmbH@kintello.de/';
+        stickyCta.href = 'https://outlook.office.com/book/Kintello@Kintello.de/?ismsaljsauthenabled';
         stickyCta.target = '_blank';
         stickyCta.rel = 'noopener';
         stickyCta.className = 'sticky-consult-cta';
